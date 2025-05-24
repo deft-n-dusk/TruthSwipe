@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase'; 
 import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
+import Background from "../assets/Background.png";
 
 const SignupPage = () => {
   const [name, setName] = useState('');
@@ -45,7 +46,8 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[url('/src/assets/background.png')] bg-cover bg-center flex flex-col items-center justify-center text-white px-4">
+    <div className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-white px-4"
+           style={{ backgroundImage: `url(${Background})` }}>
       
       {/* Top Navbar */}
       <div className="absolute top-0 w-full px-6 py-4 flex justify-between items-center bg-[#12194f]/70 border-b border-[#2c3e70] rounded-b-xl z-10">
