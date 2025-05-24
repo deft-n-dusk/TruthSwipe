@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import { getDoc } from "firebase/firestore";
+import RedSemicircle from '../assets/RedSemicircle.png';
+import GreenSemicircle from '../assets/GreenSemicircle.png';
+import Star from '../assets/Star.png';
+import "../App.css"
 
 export default function Game() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,12 +118,12 @@ export default function Game() {
       </div>
 
       <div className="flex flex-col items-center justify-center">
-        <img src="/src/assets/RedSemicircle.png" alt="" className="w-[30rem]" />
+        <img src={RedSemicircle} alt="" className="w-[30rem]" />
       </div>
 
       <div className="flex flex-col items-center justify-center px-4 py-8">
         <div className="bg-blue-950 absolute opacity-80 top-[8rem] text-white text-3xl font-semibold flex items-center justify-center rounded-full mb-4 w-40 h-16 border-blue-400 border-[1px] pl-8 ">
-          <img src="/src/assets/Star.png" alt="" className="w-[4rem] absolute left-1" />
+          <img src={Star} alt="" className="w-[4rem] absolute left-1" />
           {score}
         </div>
 
@@ -150,8 +154,8 @@ export default function Game() {
               
               <div
                 className={`absolute text-black rounded-3xl shadow-xl px-16 py-24 text-center border-[1px]  ${currentMessage.bg}  
-              ${feedback === "correct" ? "shadow-[0_0_40px_15px_rgba(34,197,94,0.7)]" : ""}
-              ${feedback === "wrong" ? "shadow-[0_0_40px_15px_rgba(220,38,38,0.7)]" : ""}`}
+              ${feedback === "correct" ? "custom-correct-shadow" : ""}
+              ${feedback === "wrong" ? "custom-wrong-shadow" : ""}`}
               >
                 <div
                   className={`absolute inset-0 rounded-3xl blur-xl opacity-30 pointer-events-none ${currentMessage.bg?.split(" ")[0]}`}
@@ -180,7 +184,7 @@ export default function Game() {
 
       <div className="flex flex-col items-center justify-center">
         <img
-          src="/src/assets/GreenSemicircle.png"
+          src={GreenSemicircle}
           alt=""
           className="w-[30rem] absolute bottom-0"
         />
