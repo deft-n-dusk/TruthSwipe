@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import bg from '../assets/Background.png';
 import Navbar from "../Components/Navbar";
 import overlay from '../assets/Background_effect.png';
-import Star from "../assets/star.png";
+import Star from "../assets/Star.png";
 
 const GameOver = () => {
   const navigate = useNavigate();
